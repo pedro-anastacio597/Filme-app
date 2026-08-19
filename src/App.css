@@ -59,6 +59,24 @@
   color: #333;
 }
 
+.contato{
+  color: #333;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.contato a{
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.contato a:hover{
+  color: #4361ee;
+  text-decoration: underline;
+}
+
 /* A lista usa Flexbox para colocar os cartões LADO A LADO.
    "flex-wrap: wrap" faz os cartões pularem de linha quando não couberem. */
 .lista {
@@ -98,6 +116,7 @@
 /* Botão que alterna o estado "assistido". */
 .cartao-botao {
   margin-top: auto; /* empurra o botão para a base do cartão */
+  margin-bottom: 2px;
   padding: 8px 12px;
   border: none;
   border-radius: 6px;
@@ -109,4 +128,14 @@
 
 .cartao-botao:hover {
   background-color: #3048c0;
+}
+
+.rodape {
+    color: white;
+    margin-top: 10px;
+    padding: 20px 0px;
+    background-color: black;
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
 }

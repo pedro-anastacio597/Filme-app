@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import PaginaFilmes from './components/PaginaFilmes'
 import PaginaSobre from './components/PaginaSobre'
+import Rodape from './components/Rodape'
+import PaginaContato from './components/PaginaContato'
 import './App.css'
+
 
 function App() {
 
@@ -16,6 +19,8 @@ function App() {
       <header className="cabecalho">
         <h1>Cineteca</h1>
         <p>Minha coleção de filmes</p>
+
+        {'filmes' === tela && <p>Quantidade de fimles: {tela.length}</p>}
       </header>
 
       {/* MENU: cada botão muda a tela ativa.
@@ -33,11 +38,22 @@ function App() {
         >
           Sobre
         </button>
+        <button
+          className={tela === 'contato' ? 'menu-botao ativo' : 'menu-botao'}
+          onClick={() => setTela('contato')}
+        >
+          Contato
+        </button>
       </nav>
 
       {/* Mostra o componente conforme a tela escolhida. */}
-      {tela === 'filmes' && <PaginaFilmes />}
+      {tela === 'filmes' && (<PaginaFilmes />)}
       {tela === 'sobre' && <PaginaSobre />}
+      {tela === "contato" && <PaginaContato/>}
+
+      <footer>
+        <Rodape/>
+      </footer>
     </div>
   )
 }

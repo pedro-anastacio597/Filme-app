@@ -1,9 +1,12 @@
 // PaginaFilmes é a "tela" que mostra a lista de filmes.
 // Ela cuida de percorrer os dados e desenhar um cartão para cada filme.
+import { useState } from 'react'
 import filmes from '../data/filmes'
 import CartaoFilme from './CartaoFilme'
 
 function PaginaFilmes() {
+  const [mostrarAno, setMostrarAno] = useState(true)
+
   return (
     <div className="lista">
       {/*
@@ -12,7 +15,7 @@ function PaginaFilmes() {
         ajuda o React a saber qual item é qual.
       */}
       {filmes.map((filme) => (
-        <CartaoFilme key={filme.id} filme={filme} />
+        <CartaoFilme key={filme.id} filme={filme} mostrarAno={mostrarAno} setMostrarAno={setMostrarAno} />
       ))}
     </div>
   )
